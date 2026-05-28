@@ -1,0 +1,112 @@
+.navbar{
+  width:100%;
+  padding:24px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  animation: fadeDown 0.7s ease-out forwards;
+}
+
+.logo{ display:flex; align-items:center; gap:10px; }
+
+.logo span{
+  font-size:44px;
+  line-height:1;
+  font-family:'DM Serif Display',serif;
+  font-weight:400;
+  background:linear-gradient(135deg, var(--rose-dark) 0%, var(--rose-light) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  transition: filter 0.3s ease;
+}
+
+.logo span:hover{ filter:brightness(1.2); }
+
+.logo-text h3{
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:3px;
+  color:#111;
+  line-height:1.2;
+}
+
+.logo-text p{
+  font-size:9px;
+  letter-spacing:3px;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+nav{ display:flex; gap:36px; }
+
+nav a{
+  position:relative;
+  text-decoration:none;
+  color:#111;
+  font-size:12px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover{ color:var(--rose-dark); transform:translateY(-2px); }
+
+nav a.active{ color:var(--rose-dark); }
+
+nav a.active::after{
+  content:'';
+  position:absolute;
+  left:0; bottom:-8px;
+  width:100%; height:2px;
+  border-radius:99px;
+  background:var(--rose-mid);
+}
+
+.talk-btn{
+  height:50px;
+  padding:0 36px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg, var(--rose-dark) 0%, var(--rose-light) 100%);
+  color:#fff;
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  cursor:pointer;
+  box-shadow:0 8px 24px rgba(201,104,95,.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.talk-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 32px rgba(201,104,95,.35);
+}
+
+.navbar{
+  width:100%;
+  padding:24px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  animation: fadeDown 0.7s ease-out forwards;
+
+  position:sticky;    /* ✅ stays at top */
+  top:0;
+  z-index:999;
+  background:#fffdfc; /* ✅ so content doesn't show through */
+  backdrop-filter: blur(10px);  /* ✅ nice frosted glass effect */
+}
+
+@keyframes fadeDown{
+  0%  { opacity:0; transform:translateY(-30px); }
+  100%{ opacity:1; transform:translateY(0); }
+}
+
+@media(max-width:768px){
+  .navbar{ padding:20px 24px; }
+  nav{ display:none; }
+}

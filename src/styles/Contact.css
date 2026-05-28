@@ -1,0 +1,294 @@
+.contact-section{
+  padding:120px 70px;
+  background:#fffdfc;
+}
+
+/* HEADER */
+
+.contact-header{
+  text-align:center;
+  opacity:0;
+}
+
+.contact-header p{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:4px;
+  color:#d48b82;
+  margin-bottom:12px;
+}
+
+.contact-header h2{
+  font-size:58px;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  color:#111;
+}
+
+.contact-header h2 span{
+  color:#e29a91;
+  font-size:20px;
+}
+
+/* WRAPPER */
+
+.contact-wrapper{
+  margin-top:60px;
+
+  display:grid;
+  grid-template-columns:380px 1fr;
+
+  gap:80px;
+
+  align-items:start;
+}
+
+/* LEFT */
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  opacity:0;
+}
+
+.contact-icon{
+  width:58px;
+  height:58px;
+
+  border-radius:50%;
+
+  border:1px solid #f0c9c2;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#de8d82;
+
+  font-size:22px;
+
+  background:#fff;
+
+  transition:.3s ease;
+}
+
+.contact-item:hover .contact-icon{
+  transform:translateY(-3px) scale(1.04);
+  background:#de8d82;
+  color:#fff;
+}
+
+.contact-item span{
+  font-size:16px;
+  font-family:'Poppins',sans-serif;
+  color:#444;
+}
+
+/* FORM */
+
+.contact-form{
+  width:100%;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:18px;
+
+  opacity:0;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+
+  border:1px solid #f0d8d3;
+
+  background:#fff;
+
+  border-radius:10px;
+
+  padding:18px 22px;
+
+  font-size:15px;
+
+  font-family:'Poppins',sans-serif;
+
+  outline:none;
+
+  transition:.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color:#de8d82;
+  box-shadow:0 0 0 4px rgba(222,141,130,.08);
+}
+
+.contact-form textarea{
+  height:180px;
+  resize:none;
+}
+
+/* BUTTON */
+
+.contact-form button{
+  margin-top:4px;
+
+  height:58px;
+
+  border:none;
+
+  border-radius:10px;
+
+  background:linear-gradient(
+    135deg,
+    #d97f74 0%,
+    #efb1a7 100%
+  );
+
+  color:#fff;
+
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:1px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+
+  cursor:pointer;
+
+  transition:.3s ease;
+
+  box-shadow:0 12px 28px rgba(217,127,116,.18);
+}
+
+.contact-form button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 16px 34px rgba(217,127,116,.24);
+}
+
+/* ENTRANCE ANIMATION */
+
+.show-contact .contact-header{
+  animation:contactHeaderIn .8s ease forwards;
+}
+
+.show-contact .contact-item{
+  animation:contactInfoIn .75s cubic-bezier(.22,1,.36,1) forwards;
+}
+
+.show-contact .contact-form{
+  animation:contactFormIn .9s ease .25s forwards;
+}
+
+.show-contact .contact-form input:nth-child(1){
+  animation:fieldIn .55s ease .45s forwards;
+}
+
+.show-contact .contact-form input:nth-child(2){
+  animation:fieldIn .55s ease .6s forwards;
+}
+
+.show-contact .contact-form textarea{
+  animation:fieldIn .55s ease .75s forwards;
+}
+
+.show-contact .contact-form button{
+  animation:fieldIn .55s ease .9s forwards;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button{
+  opacity:0;
+}
+
+/* KEYFRAMES */
+
+@keyframes contactHeaderIn{
+
+  from{
+    opacity:0;
+    transform:translateY(-28px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@keyframes contactInfoIn{
+
+  from{
+    opacity:0;
+    transform:translateX(-45px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+
+}
+
+@keyframes contactFormIn{
+
+  from{
+    opacity:0;
+    transform:translateY(35px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+@keyframes fieldIn{
+
+  from{
+    opacity:0;
+    transform:translateY(18px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+  .contact-wrapper{
+    grid-template-columns:1fr;
+    gap:50px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .contact-section{
+    padding:100px 24px;
+  }
+
+  .contact-header h2{
+    font-size:44px;
+  }
+
+}
