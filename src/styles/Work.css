@@ -133,10 +133,40 @@
   opacity:1;
 }
 
+.project-badge{
+  display:inline-block;
+  margin-top:18px;
+  padding:6px 13px;
+  border-radius:999px;
+  font-size:11px;
+  font-family:'Poppins',sans-serif;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  background:#fff4f2;
+  color:#c9685f;
+  border:1px solid #f0c7c1;
+}
+
+.project-badge.figma{
+  background:#fff7f5;
+  color:#d1776d;
+}
+
+.project-badge.website{
+  background:#fff4f2;
+  color:#c9685f;
+}
+
+.project-badge.mobile-app{
+  background:#fff4f2;
+  color:#c9685f;
+}
+
 .work-card h3{
   margin-top:14px;
   font-size:24px;
-  line-height:1;
+  line-height:1.2;
   font-family:'Poppins',sans-serif;
   font-weight:700;
   color:#111;
@@ -212,36 +242,6 @@
 
 .show-work .work-dots{
   animation:workFade .8s ease .8s forwards;
-}
-
-.project-badge{
-  display:inline-block;
-  margin-top:18px;
-  padding:6px 13px;
-  border-radius:999px;
-  font-size:11px;
-  font-family:'Poppins',sans-serif;
-  font-weight:700;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  background:#fff4f2;
-  color:#c9685f;
-  border:1px solid #f0c7c1;
-}
-
-.project-badge.figma{
-  background:#fff7f5;
-  color:#d1776d;
-}
-
-.project-badge.website{
-  background:#fff4f2;
-  color:#c9685f;
-}
-
-.project-badge.mobile-app{
-  background:#fff4f2;
-  color:#c9685f;
 }
 
 @keyframes workHeaderIn{
@@ -326,6 +326,8 @@
   .work-header{
     flex-direction:column;
     gap:20px;
+    opacity:1;
+    animation:none;
   }
 
   .work-header h2{
@@ -334,6 +336,8 @@
 
   .work-carousel{
     display:block;
+    opacity:1;
+    animation:none;
   }
 
   .desktop-projects{
@@ -344,6 +348,17 @@
     display:grid !important;
     grid-template-columns:1fr;
     gap:34px;
+    opacity:1 !important;
+  }
+
+  .mobile-projects .work-card{
+    opacity:1 !important;
+    animation:none !important;
+    transform:none !important;
+  }
+
+  .work-card:hover{
+    transform:none;
   }
 
   .work-arrow,
@@ -352,12 +367,20 @@
   }
 
   .work-card h3{
-    font-size:32px;
+    font-size:28px;
+  }
+
+  .work-image-link img{
+    height:220px;
   }
 
   .work-overlay{
     opacity:1;
     background:rgba(201,104,95,0.25);
+  }
+
+  .project-badge{
+    margin-top:16px;
   }
 
 }
